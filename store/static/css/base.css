@@ -1,0 +1,46 @@
+body{
+	background: #f3f3f3;
+}
+
+.img-look{
+    height: 300px;
+}
+
+.product-look{
+	height: 400px;
+	width: 400px;
+}
+
+.product_title{
+	font-size: 30px;
+	letter-spacing: .2em;
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+
+.product_text{
+	padding-right: 10px;
+}
+
+.product_description{
+	font-size: 16px;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+}
+
+.errorlist li{
+	color: red;
+	font-weight: bold;
+}
+
+.custom_div{
+	margin-bottom: 20px !important;
+}
+
+.contact_text{
+	font-size: 30px;
+	letter-spacing: .2em;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	color: red;
+}

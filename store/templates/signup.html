@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %} 
+	Sign Up
+{% endblock %}
+
+{% block content %}
+<div>
+{% if not form.is_valid %}
+<div class="mx-auto">
+	<br><br>
+	<h1 class="text-center product_title" style="text-transform: uppercase;">Create a new account</h1>
+	<br>
+	<div class="col-9 col-sm-9 col-md-6 col-lg-5 mx-auto bg-light">
+		<p>Enter the following details to create an account</p>
+		<form method="POST">
+		{% csrf_token %}
+			<p>{{ form | crispy }}</p>
+			<br>
+		<button type="submit" name="button" class="btn btn-secondary">Sign Up</button>
+		</form>
+		<br>
+	</div>
+</div>
+
+{% else %}
+<div class="mx-auto">
+	<br><br>
+	<h1 class="text-center product_title">Your account has be successfully created</h1>
+	<br>
+	<div class="container">
+		<p>Dear Customer,<br>
+			Your account has been created and is ready to use.
+		<br>
+		<a href="{% url 'home' %}">Start shopping</a> and enjoy variety of products we have at AR-Store.
+		</p>
+	</div>
+</div>
+<br>
+{% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %} 
+	Contact
+{% endblock %}
+
+{% block content %}
+<div class="container"> 
+<div class="mx-auto">
+	<br>
+	<div class="row">
+		<div class="col-12 col-sm-12 col-lg-6 text-center custom_div">
+			<h2 class="contact_text text-uppercase">Don't be a stranger</h2>
+			<h3>Have a query? Ask here. </h3>
+			<p>We are always available to help you and<br>
+			look into your queries. Feel free to share your<br>
+			problems here or contact us.<br></p>
+			<br>
+			<h5>Email: </h5>
+			<p>aniketraj2014@gmail.com</p>
+			<h5>Contact Number: </h5>
+			<p>+91 7762943402</p>
+			<br>
+			<h5>Follow Us:</h5>
+			<table class="table"  style="width: 100%;">
+				<tr>
+					<td><a href="https://www.instagram.com/a.n.i.k.e.t_r.a.j/">
+						<span style="font-size: 25px;"><i class="fab fa-instagram cart_icon"></i></span>
+						</a>
+					</td>
+					<td><a href="https://www.facebook.com/ar.raj.13/">
+						<span style="font-size: 25px;"><i class="fab fa-facebook cart_icon"></i></span>
+						</a>
+					</td>
+					<td><a href="https://twitter.com/">
+						<span style="font-size: 25px;"><i class="fab fa-twitter-square cart_icon"></i>
+						</span></a>
+					</td>
+					<td><a href="https://youtube.com/">
+						<span style="font-size: 25px;"><i class="fab fa-youtube cart_icon"></i></span>
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-12 col-sm-12 col-md-12 col-lg-6 bg-light">
+		<br>
+		<div class="container">
+			<form method="POST">
+			{% csrf_token %}
+			<div class="card border rounded-0">
+				<div class="card-header p-0">
+				<div class="bg-dark text-white text-center py-2">
+					<h1 class="product_title text-uppercase">contact</h1>
+				</div>
+				</div>
+				<div class="card-body p-3">
+				<div class="form-group">
+				<div class="input-group mb-3">
+		  		<div class="input-group-prepend">
+		   			<span class="input-group-text">
+		   				<i class="fa fa-user text-dark"></i>
+		   			</span>
+		  		</div>
+		  		{% render_field form.full_name class+="form-control" placeholder="Your Name" %}
+				</div>
+				</div>
+
+				<div class="form-group">
+				<div class="input-group mb-3">
+		  		<div class="input-group-prepend">
+		   			<span class="input-group-text">
+		   				<i class="fa fa-envelope text-dark"></i>
+		   			</span>
+		  		</div>
+		  		{% render_field form.email class+="form-control" placeholder="Your Email" %}
+				</div>
+				</div>
+
+				<div class="form-group">
+				<div class="input-group mb-3">
+		  		<div class="input-group-prepend">
+		   			<span class="input-group-text">
+		   				<i class="fa fa-envelope-open-text text-dark"></i>
+		   			</span>
+		  		</div>
+		  		{% render_field form.subject class+="form-control" placeholder="Subject" %}
+				</div>
+				</div>
+
+				<div class="form-group">
+				<div class="input-group mb-3">
+		  		<div class="input-group-prepend">
+		   			<span class="input-group-text">
+		   				<i class="fa fa-comment text-dark"></i>
+		   			</span>
+		  		</div>
+		  		{% render_field form.content rows="3" class+="form-control" placeholder="Messages" %}
+				</div>
+				</div>
+
+				</div>
+			</div>
+			<br>
+			<button type="submit" name="button" class="btn btn-dark btn-block rounded-0 py-2 mt-3">Submit
+			</button>
+			</form>
+			<br>
+		</div>
+		</div>
+	</div>
+</div>
+<br>
+</div>
+<br>
+{% endblock %}

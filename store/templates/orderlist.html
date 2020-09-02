@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} 
+	History
+{% endblock %}
+
+{% block content %}
+<div class="text-center">
+	<br>
+	<h1 class="product_title text-uppercase">Order history</h1>
+	<br>
+	{% if order_details %}
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Order Number</th>
+				<th>Order Date</th>
+				<th>Total Amount</th>
+				<th>Status</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for order in order_details %}
+			<tr>
+				<td>{{ order.id }}</td>
+				<td>{{ order.created|date:'d M Y' }}</td>
+				<td><i class="fas fa-rupee-sign"> {{ order.total }}</td>
+				<td><i class="fas fa-check"></i> &nbsp;Complete</td>
+				<td><a href="{% url 'order_details' order.id %}">View Order</a></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	{% else %}
+	<p>You have not placed any order yet.</p>
+	<br><br>
+	<a href="{% url 'home' %}" class="btn btn-secondary">Start Shopping</a>
+	{% endif %}
+</div>
+<br><br>
+
+{% endblock %}

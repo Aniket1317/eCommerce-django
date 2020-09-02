@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} 
+	AR-Store
+{% endblock %}
+
+{% block content %}
+<div class="text-center">
+	<br><br>
+	<h1 class="text-center product_title text-uppercase">Thanks! For placing order</h1>
+	<br><br>
+	<p>Your Order id is: <b>{{ customer_order.id }}</b></p>
+	<br>
+	<p>We have recieved your order and begin processing right away. The summary of your order has been sent in your email.</p>
+	<br>
+</div>
+<br><br><br><br><br><br>
+
+{% endblock %}
